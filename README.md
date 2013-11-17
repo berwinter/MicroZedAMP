@@ -8,7 +8,7 @@ Testing Pre-Built Reference Design
 
 You can test the pre-build images as follows:
 
-***Boot PetaLinux***
+***Boot Linux***
 
 1. Conﬁgure the MicroZed to use SD boot mode by connecting 2-3 of jumper JP2 and JP2 on the board.
 2. Connect the USB port on MircoZed to your host
