@@ -62,6 +62,11 @@ modprobe rpmsg_freertos_statistic
 ```
 
 2. Run ´mdev´ to scan and add new devices to ´/dev´:
+
+```
+mdev -s
+```
+
 3. Run ´latencystat´ demo application as follows:
 
 ```
