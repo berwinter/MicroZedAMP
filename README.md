@@ -21,15 +21,19 @@ You can test the pre-build images as follows:
 1. Watch the console. Log into the Linux system with username: root and password: root.
 2. Load the remoteproc modules to prepare to load the 2nd processor with FreeRTOS ﬁrmware from the console as follows:
 
-	modprobe virtio
-	modprobe virtio_ring
-	modprobe virtio_rpmsg_bus
-	modprobe rpmsg_proto
-	modprobe remoteproc
+```
+modprobe virtio
+modprobe virtio_ring
+modprobe virtio_rpmsg_bus
+modprobe rpmsg_proto
+modprobe remoteproc
+```
 
 3. Load the 2nd processor with FreeRTOS ﬁrmware as follows:
 
-	modprobe zynq_remoteproc
+```
+modprobe zynq_remoteproc
+```
 
 4. You can see the following messages on the console:
 
@@ -53,12 +57,16 @@ virtio_rpmsg_bus virtio0: creating channel rpmsg-timer-statistic addr 0x50
 
 1. The FreeRTOS application provided in the pre-built reference design collects interrupt latency statistics within the FreeRTOS environment, and reports the results to Linux which are displayed by the `latencystat` Linux demo application. The ´rpmsg_freertos_statistic´ module must ﬁrst be loaded so that we can send/receive messages to FreeRTOS. To load the module run the following command in the console
 
-	modprobe rpmsg_freertos_statistic
+```
+modprobe rpmsg_freertos_statistic
+```
 
 2. Run ´mdev´ to scan and add new devices to ´/dev´:
 3. Run ´latencystat´ demo application as follows:
 
-	latencystat -b
+```
+latencystat -b
+```
 
 4. The application will print output similar to the following:
 
@@ -97,8 +105,10 @@ The Trace Buffer is a section of shared memory which is only written to by the F
 
 The Trace Buffer is a ring buffer, this means that after the Buffer is full it will wrap around and begin writing to the start of the buffer. When accessing the buffer via Linux it will not be read as a stream. The default Trace Buffer is 32 KB in size. The Trace Buffer can be accessed via debugfs as a ﬁle.
 
-	mount -t debugfs none /sys/kernel/debug
-	cat /sys/kernel/debug/remoteproc/remoteproc0/trace0
+```
+mount -t debugfs none /sys/kernel/debug
+cat /sys/kernel/debug/remoteproc/remoteproc0/trace0
+```
 
 Contact
 ------
