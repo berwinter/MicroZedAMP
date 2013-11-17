@@ -21,11 +21,11 @@ You can test the pre-build images as follows:
 1. Watch the console. Log into the Linux system with username: root and password: root.
 2. Load the remoteproc modules to prepare to load the 2nd processor with FreeRTOS ﬁrmware from the console as follows:
 
-	# modprobe virtio
-	# modprobe virtio_ring
-	# modprobe virtio_rpmsg_bus
-	# modprobe rpmsg_proto
-	# modprobe remoteproc
+	\# modprobe virtio
+	\# modprobe virtio_ring
+	\# modprobe virtio_rpmsg_bus
+	\# modprobe rpmsg_proto
+	\# modprobe remoteproc
 
 3. Load the 2nd processor with FreeRTOS ﬁrmware as follows:
 
@@ -52,12 +52,12 @@ You can test the pre-build images as follows:
 
 1. The FreeRTOS application provided in the pre-built reference design collects interrupt latency statistics within the FreeRTOS environment, and reports the results to Linux which are displayed by the `latencystat` Linux demo application. The ´rpmsg_freertos_statistic´ module must ﬁrst be loaded so that we can send/receive messages to FreeRTOS. To load the module run the following command in the console
 
-	# modprobe rpmsg_freertos_statistic
+	\# modprobe rpmsg_freertos_statistic
 
 2. Run ´mdev´ to scan and add new devices to ´/dev´:
 3. Run ´latencystat´ demo application as follows:
 
-	# latencystat -b
+	\# latencystat -b
 
 4. The application will print output similar to the following:
 
