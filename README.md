@@ -1,18 +1,18 @@
 MicroZed FreeRTOS AMP Application
 ======
 
-This is a port of the *Zynq AMP Linux FreeRTOS* reference design. For more information about the demo application read the orginal document. [\[UG978\]](http://www.xilinx.com/support/documentation/sw_manuals/petalinux2013_04/ug978-petalinux-zynq-amp.pdf)
+This is a port of the *Zynq AMP Linux FreeRTOS* reference design for the MircoZed. For more information about the demo application read the orginal document. [\[UG978\]](http://www.xilinx.com/support/documentation/sw_manuals/petalinux2013_04/ug978-petalinux-zynq-amp.pdf)
 
-Testing Pre-Built Reference Design
+Testing Prebuilt Reference Design
 -----
 
-You can test the pre-build images as follows:
+You can test the prebuild images as follows:
 
 ***Boot Linux***
 
 1. Conﬁgure the MicroZed to use SD boot mode by connecting 2-3 of jumper JP2 and JP2 on the board.
 2. Connect the USB port on MircoZed to your host
-3. Copy the "BOOT.BIN", "devicetree.dtb", "uramdisk.image.gz" and "uImage" from the pre-built directory to your SD card.
+3. Copy the `BOOT.BIN`, `devicetree.dtb`, `uramdisk.image.gz` and `uImage` from the prebuilt directory to your SD card.
 4. Insert the SD card into the SD card slot on MircoZed and then power on the board.
 5. Use a serial terminal application to monitor the UART output from MircoZed. Conﬁgure the terminal application to use a baudrate of 115200-8N1.
 
@@ -55,19 +55,19 @@ virtio_rpmsg_bus virtio0: creating channel rpmsg-timer-statistic addr 0x50
 
 ***Demo Application***
 
-1. The FreeRTOS application provided in the pre-built reference design collects interrupt latency statistics within the FreeRTOS environment, and reports the results to Linux which are displayed by the `latencystat` Linux demo application. The ´rpmsg_freertos_statistic´ module must ﬁrst be loaded so that we can send/receive messages to FreeRTOS. To load the module run the following command in the console
+1. The FreeRTOS application provided in the pre-built reference design collects interrupt latency statistics within the FreeRTOS environment, and reports the results to Linux which are displayed by the `latencystat` Linux demo application. The `rpmsg_freertos_statistic` module must ﬁrst be loaded so that we can send/receive messages to FreeRTOS. To load the module run the following command in the console
 
 ```
 modprobe rpmsg_freertos_statistic
 ```
 
-2. Run ´mdev´ to scan and add new devices to ´/dev´:
+2. Run `mdev` to scan and add new devices to ´/dev´:
 
 ```
 mdev -s
 ```
 
-3. Run ´latencystat´ demo application as follows:
+3. Run `latencystat` demo application as follows:
 
 ```
 latencystat -b
