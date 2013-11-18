@@ -1,22 +1,22 @@
 MicroZed FreeRTOS AMP Application
 ======
 
-This is a port of the *Zynq AMP Linux FreeRTOS* reference design for the MircoZed. For more information about the demo application read the orginal document. [\[UG978\]](http://www.xilinx.com/support/documentation/sw_manuals/petalinux2013_04/ug978-petalinux-zynq-amp.pdf)
+This is a port of the *Zynq AMP Linux FreeRTOS* reference design for the MicroZed. For more information about the demo application read the orginal document. [\[UG978\]](http://www.xilinx.com/support/documentation/sw_manuals/petalinux2013_04/ug978-petalinux-zynq-amp.pdf)
 
 Testing Prebuilt Reference Design
 -----
 
 You can test the prebuild images as follows:
 
-***Boot Linux***
+###Boot Linux###
 
 1. Conﬁgure the MicroZed to use SD boot mode by connecting 2-3 of jumper JP2 and JP2 on the board.
-2. Connect the USB port on MircoZed to your host
+2. Connect the USB port on MicroZed to your host
 3. Copy the `boot.bin`, `devicetree.dtb`, `uramdisk.image.gz` and `uImage` from the prebuilt directory to your SD card.
-4. Insert the SD card into the SD card slot on MircoZed and then power on the board.
+4. Insert the SD card into the SD card slot on MicroZed and then power on the board.
 5. Use a serial terminal application to monitor the UART output from MircoZed. Conﬁgure the terminal application to use a baudrate of 115200-8N1.
 
-***Starting FreeRTOS Firmware***
+###Starting FreeRTOS Firmware###
 
 1. Watch the console. Log into the Linux system with username: root and password: root.
 2. Load the remoteproc modules to prepare to load the 2nd processor with FreeRTOS ﬁrmware from the console as follows:
@@ -53,7 +53,7 @@ remoteproc0: registered virtio0 (type 7)
 virtio_rpmsg_bus virtio0: creating channel rpmsg-timer-statistic addr 0x50
 ```
 
-***Demo Application***
+###Demo Application###
 
 1. The FreeRTOS application provided in the pre-built reference design collects interrupt latency statistics within the FreeRTOS environment, and reports the results to Linux which are displayed by the `latencystat` Linux demo application. The `rpmsg_freertos_statistic` module must ﬁrst be loaded so that we can send/receive messages to FreeRTOS. To load the module run the following command in the console
 
@@ -104,7 +104,7 @@ The `latencystat` demo application sends requests to FreeRTOS to ask for latency
 
 The `latencystat` demo application can display the information in a graph format or dump the data in hex. Use the `-h` parameter to display the help information of the application.
 
-***Accessing the Trace Buffer*** 
+###Accessing the Trace Buffer### 
 
 The Trace Buffer is a section of shared memory which is only written to by the FreeRTOS application. This Trace Buffer can be used as a logging console to transfer information to Linux. It can act similar to a one way serial console.
 
