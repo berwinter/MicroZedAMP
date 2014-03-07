@@ -162,7 +162,7 @@ struct vring_used {
 /* Rx Vring IRQ from Linux */
 #define RXVRING_IRQ					3
 /* IRQ to notify Linux */
-#define NOTIFY_LINUX_IRQ			5
+#define NOTIFY_LINUX_IRQ			6
 
 /* vring data buffer max length including the header */
 #define PACKET_LEN_MAX				512
