@@ -311,6 +311,12 @@
 			interrupts = <0 7 4>;
 			reg = <0xf8007100 0x20>;
 		} ;
+		ps7_can_0: ps7-can@e0008000 {
+                compatible = "xlnx,ps7-can-1.00.a";
+                interrupts = < 0 28 4 >;
+                reg = < 0xe0008000 0x1000 >;
+                xlnx,can-clk-freq-hz = <10000000>;
+        } ;
 		test: remoteproc-test@0 {
 			compatible = "xlnx,zynq_remoteproc";
 			reg = < 0x0 0x20000000 >;
